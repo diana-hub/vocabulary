@@ -4,23 +4,23 @@
 }
 
 html, body {
-    font-family: Helvetica, Geneva, Arial,
-          SunSans-Regular, sans-serif;
+    /*font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif;*/
+    font-family: "Gill Sans", sans-serif;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    color: #7BA7AB
-    background-color: white
+    color: #800000;
+    background-color: white;
 }
 
-.flex{
+.flex {
     display: inline-block;
 }
 
-.flex-center{
+.flex-center {
     align-content: center;
     justify-content: center;
 }
@@ -35,3 +35,22 @@ ul.navbar {
     min-height: 100px;
     align-items: center;
 }
+
+.fixed-header, .fixed-footer {
+    width: 95%;
+    position: fixed;
+    padding: 0;
+}
+
+.fixed-header {
+    top: 0;
+}
+
+.fixed-footer {
+    bottom: 0;
+}
+
+.container {
+    margin: 0 auto; /* Center the DIV horizontally */
+}
+
