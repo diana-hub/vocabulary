@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import request
 import sqlite3
@@ -46,7 +46,7 @@ def main_page():
 
 @app.route("/word_list/")
 def word_list():
-    word_list = query_db('select * from vocabulary;')
+    word_list = query_db('SELECT * FROM vocabulary;')
 
     search = request.args.get('search')
 
@@ -60,14 +60,17 @@ def word_list():
     return render_template('word_list.html', word_list=word_list)
 
 
-@app.route("/add_words/")
+@app.route("/add_words/", methods=['GET', 'POST'])
 def add_words():
-    add_words = "Filling form"
-    return render_template('add_words.html', add_words=add_words)
-
-
-@app.route('/db/')
-def index():
-    data = query_db('select * from vocabulary;')
-    print(data)
-    return 'соединение с базой. Тест'
+    if request.method == 'GET':
+        add_words = "Filling form"
+        return render_template('add_words.html', add_words=add_words)
+    if request.method == 'POST':
+        word = request.form.get('word')
+        description = request.form.get('description')
+        word_translation = request.form.get('translation')
+        query = 'INSERT INTO vocabulary (word, description, word_translation) VALUES (?, ?, ?);'
+        cur = get_db()
+        cur.execute(query, (word, description, word_translation))
+        cur.commit()
+        return redirect(url_for('word_list'))
