@@ -46,35 +46,28 @@ def main_page():
 
 @app.route("/word_list/")
 def word_list():
-    word_1 = 'to mash'
-    description_1 = 'to go somewhere very fast, being in a hurry'
-    translation_1 = 'врываться'
-    word_2 = 'to dash'
-    description_2 = 'to go somewhere very fast, being in a hurry'
-    translation_2 = 'врываться'
-    word_list = [
-        [word_1, description_1, translation_1],
-        [word_2, description_2, translation_2],
-        [word_2, description_2, translation_2],
-        [word_2, description_2, translation_2]
-    ]
+    word_list = query_db('select * from vocabulary;')
+
     search = request.args.get('search')
 
     if search:
+        # TODO: поиск увести в базу
         list_req = []
         for i in word_list:
-            if search in i[0]:
+            if search in i[1]:
                 list_req.append(i)
         return render_template('word_list.html', word_list=list_req, count=len(list_req), search=search)
     return render_template('word_list.html', word_list=word_list)
 
 
-@app.route("/add/")
-def add():
-    return 'Здесь будет форма добавления слов'
+@app.route("/add_words/")
+def add_words():
+    add_words = "Filling form"
+    return render_template('add_words.html', add_words=add_words)
 
 
 @app.route('/db/')
 def index():
-    cur = get_db().cursor()
+    data = query_db('select * from vocabulary;')
+    print(data)
     return 'соединение с базой. Тест'

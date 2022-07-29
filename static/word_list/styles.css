@@ -3,24 +3,21 @@
     padding: 0;
 }
 
+body {
+    font-family: "Gill Sans", sans-serif;
+    /*color: black;
+    background-color: #FFFFFF*/
+}
+
 h1 {
-    font-family: Helvetica, Geneva, Arial,
-          SunSans-Regular, sans-serif;
+    color: #69312c;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     /*color: #7BA7AB*/
-    color: #69312c
     margin-top: 2%;
-}
-
-body {
-    font-family: Helvetica, Geneva, Arial,
-          SunSans-Regular, sans-serif;
-    color: black;
-    background-color: #FFFFFF
 }
 
 .results {
@@ -42,12 +39,14 @@ form {
     margin: 0 auto;
 }
 
-.d1 {background: #fa8532; /*#A3D0C3;*/}
+.d1 {background: #ff8c21; /*#A3D0C3;*/}
 .d1 input {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 16px;
     width: 100%;
     height: 42px;
     padding-left: 10px;
-    border: 2px solid #db781a; /*#7BA7AB;*/
+    border: 2px solid #d16517; /*#7BA7AB;*/
     border-radius: 5px;
     outline: none;
     background: #F9F0DA;
@@ -55,18 +54,21 @@ form {
 }
 
 .d1 button {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 16px;
     position: absolute;
     top: 0;
     right: 0px;
     width: 84px;
     height: 42px;
     border: none;
-    background: #db781a; /*#7BA7AB;*/
+    background: #d16517; /*#7BA7AB;*/
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
 
 a {
+    font-size: 18px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -86,6 +88,8 @@ table {
     margin-left: 10%;
     margin-right: 10%;
 }
+
+table th {text-align: left;}
 
 th {
 	font-weight: bold;

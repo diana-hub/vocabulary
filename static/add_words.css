@@ -1,0 +1,64 @@
+h3 {
+    font-family: "Gill Sans", sans-serif;
+    width: 95%;
+    height: 100%;
+    text-align: center;
+    color: #800000;
+    padding-top:20px;
+}
+
+
+.fixed-footer {
+    width: 95%;
+    position: fixed;
+    padding: 0;
+    bottom: -3.8%;
+    margin-left: 24px;
+    margin-bottom: 0;
+}
+
+.container {
+    margin: 0 auto; /* Center the DIV horizontally */
+}
+
+.add_form {
+    width: 90%;
+    background: #d5ded6;
+    margin-left: 68px;
+    margin-top: 36px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+div {
+    font-size: 24px;
+    font-family: "Gill Sans", sans-serif;
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 24px
+}
+
+.add_form input{
+    width: 90%;
+    align-items: center;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #d16517;
+    border-radius: 5px;
+    background: #F9F0DA;
+    margin-left: 60px;
+}
+
+.add_form input[type=submit]{
+    font-family: "Gill Sans", sans-serif;
+    width: 10%;
+    margin-left: 45%;
+    font-size: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: #ff8c21;
+
+}
+
+
+
