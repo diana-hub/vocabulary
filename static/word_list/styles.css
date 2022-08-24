@@ -28,7 +28,7 @@ h1 {
     align-items: center;
     color: black
     margin-top: -30%;
-    margin-bottom: 0px;
+    margin-bottom: -2%;
 }
 
 * {box-sizing: border-box;}
@@ -39,7 +39,10 @@ form {
     margin: 0 auto;
 }
 
-.d1 {background: #ff8c21; /*#A3D0C3;*/}
+.d1 {
+    background: #ff8c21; /*#A3D0C3;*/
+    margin-top: 0%;
+}
 .d1 input {
     font-family: "Gill Sans", sans-serif;
     font-size: 16px;
@@ -74,7 +77,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #7BA7AB
+    color: blue;  /*#7BA7AB;*/
     margin-top: 0;
     margin-bottom: 2%;
 }
@@ -111,4 +114,9 @@ tr td:first-child, .table tr th:first-child {
 
 tr td:last-child, .table tr th:last-child {
 	border-right: none;
+}
+
+
+html {
+  scroll-behavior: smooth;
 }

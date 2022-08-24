@@ -16,6 +16,11 @@ html, body {
     background-color: white;
 }
 
+a {
+   color: blue;
+   font-size: 18px;
+}
+
 .flex {
     display: inline-block;
 }
