@@ -31,11 +31,18 @@
 
      <table>
          <tbody>
+             <col class="column-one">
+             <col class="column-two">
+             <col class="column-three">
+             <col class="column-four">
+             <col class="column-five">
+             <thead>
              <tr>
                  <th>ID</th>
                  <th>Word or expression</th>
                  <th>Definition</th>
                  <th>Translation</th>
+                 <th>Actions</th>
              </tr>
              {% for i in word_list %}
              <tr>
@@ -46,6 +53,22 @@
                      {% endif %}
                  </td>
                  {% endfor %}
+                 <td>
+                     <div class="photo" data-title="Edit">
+                         <form class="edit" action = "/edit/" target="_blank">
+                             <button>
+                                 <img src="/static/word_list/edit3.png">
+                             </button>
+                         </form>
+                     </div>
+                     <div class="photo_" data-title="Delete">
+                         <form class="delete" action = "/delete/" target="_blank" name = "delete">
+                             <button>
+                                 <img src="/static/word_list/delete3.png">
+                             </button>
+                         </form>
+                     </div>
+                 </td>
              </tr>
              {% endfor %}
          </tbody>

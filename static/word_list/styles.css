@@ -82,6 +82,15 @@ a {
     margin-bottom: 2%;
 }
 
+
+
+.column-one {width: 2%;}
+.column-two {width: 20%;}
+.column-three {width: 40%;}
+.column-four {width: 30%;}
+.column-five {width: 8%;}
+
+
 table {
     border-collapse: collapse;
     width: 80%;
@@ -91,6 +100,7 @@ table {
     margin-left: 10%;
     margin-right: 10%;
 }
+
 
 table th {text-align: left;}
 
@@ -118,5 +128,62 @@ tr td:last-child, .table tr th:last-child {
 
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
+
+
+.edit {
+    width: 35px;
+
+}
+.delete {
+    width: 35px;
+
+}
+
+button {
+    background: white;
+    padding: 4px;
+    margin-left: 4px;
+    border-radius: 5px;
+    border: 2px solid #d16517;
+    cursor: pointer;
+}
+
+.photo {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: relative; /* Относительное позиционирование */
+   }
+.photo_ {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: relative; /* Относительное позиционирование */
+   }
+
+.photo:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 9px; right: 0px; bottom: -4px; /* Положение подсказки */
+    /*z-index: 1; /* Отображаем подсказку поверх других элементов */
+    /*background: rgba(0,42,167,0.6); /* Полупрозрачный цвет фона */
+    color: black; /* Цвет текста */
+    /*text-align: center; /* Выравнивание текста по центру */
+    font-family: "Gill Sans", sans-serif; /* Гарнитура шрифта */
+    font-size: 12px; /* Размер текста подсказки */
+    /*padding: 5px 5px; /* Поля */
+    /*border: 1px solid #333; /* Параметры рамки */
+   }
+
+
+.photo_:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 1px; right: 0px; bottom: -4px; /* Положение подсказки */
+    /*z-index: 1; /* Отображаем подсказку поверх других элементов */
+    /*background: rgba(0,42,167,0.6); /* Полупрозрачный цвет фона */
+    color: black; /* Цвет текста */
+    /*text-align: center; /* Выравнивание текста по центру */
+    font-family: "Gill Sans", sans-serif; /* Гарнитура шрифта */
+    font-size: 12px; /* Размер текста подсказки */
+    /*padding: 5px 5px; /* Поля */
+    /*border: 1px solid #333; /* Параметры рамки */
+   }
