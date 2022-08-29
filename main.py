@@ -75,18 +75,20 @@ def add_words():
         cur.commit()
         return redirect(url_for('word_list'))
 
-@app.route("/edit_word/", methods=['GET', 'POST'])
-def edit_word():
+@app.route("/edit_word/<int:word_id>/", methods=['GET', 'POST'])
+def edit_word(word_id):
     if request.method == 'GET':
         edit_word = "Filling form"
-        return render_template('edit_word.html', edit_word=edit_word)
+        query = 'SELECT * FROM vocabulary WHERE word_id=?;'
+        word = query_db(query, (word_id,))[0]
+        return render_template('edit_word.html', edit_word=edit_word, word=word)
     if request.method == 'POST':
         word = request.form.get('word')
         description = request.form.get('description')
         word_translation = request.form.get('translation')
-        query = 'INSERT INTO vocabulary (word, description, word_translation) VALUES (?, ?, ?);'
+        query = 'UPDATE vocabulary SET word=?, description=?, word_translation=? WHERE word_id=?;'
         cur = get_db()
-        cur.execute(query, (word, description, word_translation))
+        cur.execute(query, (word, description, word_translation, word_id))
         cur.commit()
         return redirect(url_for('word_list'))
 
@@ -94,8 +96,8 @@ def edit_word():
 @app.route("/delete/<int:word_id>/", methods=['DELETE', 'POST'])
 def delete(word_id):
     if request.method in ['DELETE', 'POST']:
-        query = 'DELETE FROM vocabulary WHERE word_id=' + str(word_id) + ';'
+        query = 'DELETE FROM vocabulary WHERE word_id=?;'
         cur = get_db()
-        cur.execute(query)
+        cur.execute(query, (word_id,))
         cur.commit()
         return redirect(url_for('word_list'))

@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{edit_word}}</title>
+    <link rel="stylesheet" href="/static/edit_word.css">
+
+
 </head>
+<div class="flex flex-center">
+    <a href="/word_list/">Back to the list</a>
+</div>
+
+
 <body>
+<form class="add_form" name="feedback" method="POST" action="/edit_word/{{word.0}}/">
+    <div class="form_caption"><h3>Fill the form:</h3></div>
+    <div>Word or expression</div>
+    <input type="text" name="word" required="required" value="{{word.1}}">
+    <div>Definition</div>
+    <input type="text" name="description" required="required" value="{{word.2}}">
+    <div>Translation (optional)</div>
+    <input type="text" name="translation" value="{{word.3}}">
+    <input type="submit" name="submit_btn" value="Update">
+</form>
+
+
+<div class="fixed-footer">
+    <div class="container">
+        <p><img src="/static/cat_new.png"
+                alt="cat"
+                align="top"/>
+        </p>
+    </div>
+</div>
+
 
 </body>
 </html>
