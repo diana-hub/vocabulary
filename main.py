@@ -74,3 +74,13 @@ def add_words():
         cur.execute(query, (word, description, word_translation))
         cur.commit()
         return redirect(url_for('word_list'))
+
+
+@app.route("/delete/<int:word_id>/", methods=['DELETE', 'POST'])
+def delete(word_id):
+    if request.method in ['DELETE', 'POST']:
+        query = 'DELETE FROM vocabulary WHERE word_id=' + str(word_id) + ';'
+        cur = get_db()
+        cur.execute(query)
+        cur.commit()
+        return redirect(url_for('word_list'))
