@@ -75,6 +75,21 @@ def add_words():
         cur.commit()
         return redirect(url_for('word_list'))
 
+@app.route("/edit_word/", methods=['GET', 'POST'])
+def edit_word():
+    if request.method == 'GET':
+        edit_word = "Filling form"
+        return render_template('edit_word.html', edit_word=edit_word)
+    if request.method == 'POST':
+        word = request.form.get('word')
+        description = request.form.get('description')
+        word_translation = request.form.get('translation')
+        query = 'INSERT INTO vocabulary (word, description, word_translation) VALUES (?, ?, ?);'
+        cur = get_db()
+        cur.execute(query, (word, description, word_translation))
+        cur.commit()
+        return redirect(url_for('word_list'))
+
 
 @app.route("/delete/<int:word_id>/", methods=['DELETE', 'POST'])
 def delete(word_id):

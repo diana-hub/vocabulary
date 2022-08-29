@@ -84,11 +84,10 @@ a {
 
 
 
-.column-one {width: 2%;}
-.column-two {width: 20%;}
-.column-three {width: 40%;}
-.column-four {width: 30%;}
-.column-five {width: 8%;}
+.column-one {width: 20%;}*/
+.column-two {width: 40%;}
+.column-three {width: 30%;}
+.column-four {width: 10%;}
 
 
 table {
@@ -113,12 +112,15 @@ th {
 	border-right: none;
 }
 
+tr th:first-child {display: none;}
+
 td {
 	border: 1px solid #dddddd;
 	padding: 5px;
 }
 
 tr td:first-child, .table tr th:first-child {
+    display: none;
 	border-left: none;
 }
 
